@@ -1,0 +1,94 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url(images/galaxy.gif);
+    color: white;
+}
+
+#mass,
+#planets,
+button {
+    padding: 5px;
+    margin: 0 20px 20px 0;
+    width: 175px;
+    border: none;
+    border-radius: 5px;
+}
+
+#mass:focus-visible {
+    outline: none;
+}
+
+main {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 80px;
+}
+
+.flex-container {
+    padding: 20px;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+#mass-required {
+    display: flex;
+    width: 50%;
+    padding: 25px;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.flex-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image {
+    width: 50%;
+    padding: 100px;
+}
+
+.image>img {
+    height: 300px;
+}
+
+.description {
+    width: 50%;
+    flex-direction: column;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+#description-p {
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 30px;
+}
+
+#weight-p {
+    background: rgba(255, 255, 255, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    font-weight: bolder;
+    font-size: 20px;
+}

@@ -63,8 +63,8 @@ const calcMass = () => {
 
 let container = document.querySelector('.flex-container');
 let p = document.createElement('p');
-let massRequired = document.createElement('div');
-massRequired.id = 'mass-required';
+let required = document.createElement('div');
+required.id = 'required';
 let pw;
 
 function displayWeight(weight, planet) {
@@ -81,7 +81,7 @@ function displayWeight(weight, planet) {
     container.appendChild(childContainer);
     p.id = 'description-p';
     document.querySelector('.description').appendChild(p);
-    p.textContent = `The weight of the object of planet ${planet} `
+    p.innerHTML = `The weight of the object on <strong>${planet}</strong> `
     if (!pw) pw = document.createElement('div');
     pw.id = 'weight-p';
     pw.innerHTML = `${weight.toFixed(2)} N`;
@@ -94,8 +94,14 @@ const calculateWeight = () => {
     let g = planetGravitationalAccelaration[planet];
     if (isNaN(mass)) {
         removeAllChildElements(container);
-        container.appendChild(massRequired);
-        massRequired.textContent = mass;
+        container.appendChild(required);
+        required.textContent = mass;
+        return;
+    }
+    if (planet == 'none') {
+        removeAllChildElements(container);
+        container.appendChild(required);
+        required.textContent = 'Please select the planet';
         return;
     }
     let weight = mass * g;
